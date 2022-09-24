@@ -12,16 +12,23 @@
   place-items: center;
 }
 
-.inputs-container{
-  background-color: rgb(0, 0, 0);
-  width: 500px;
+.options-container{
+  background-color: rgb(233, 233, 233);
+  /* width: 800px; */
   border-radius: 10px;
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  place-items: center
-  
+  display: flex;
+  padding: 6px 10px;
 }
-
+.options-container button{
+  margin: 4px 10px;
+}
+.inputs-container{
+  display: grid;
+  margin-left: 10px;
+}
+.inputs-container button{
+  padding: 4px 10px;
+}
 
 @keyframes logo-spin {
   from {

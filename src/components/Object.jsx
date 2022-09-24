@@ -1,23 +1,35 @@
 import React, {useEffect} from 'react'
-import {Sphere, Tetrahedron, Torus, TorusKnot} from '@react-three/drei'
+import {useLoader} from '@react-three/fiber'
+import {Cone, Tetrahedron, Torus, TorusKnot} from '@react-three/drei'
 import * as THREE from 'three'
 
-export const Object = ({state}) => {
 
-    // const randomX = (Math.random() - 0.5) * 10
-    // const randomY = (Math.random() - 0.5) * 10
-    // const randomZ = (Math.random() - 0.5) * 10
-    // const scale = Math.random()
+export const Object = ({state, mat}) => {
+  const loadingManager = new THREE.LoadingManager()
+  const textureLoader = new THREE.TextureLoader(loadingManager)
 
-const obj = []
 
-const esfera =[]
+  const color1 = textureLoader.load('/textures/1.png')
+  const color2 = textureLoader.load('/textures/2.png')
+  const color3 = textureLoader.load('/textures/3.png')
+  const color4 = textureLoader.load('/textures/7.png')
+
+const colorMap = [
+  color1, color2, color3, color4
+]
+
+// const material = new THREE.MeshBasicMaterial(colorMap[1])
+
+const cones =[]
 for (let i = 0; i < 100; i++){
   const randomX = (Math.random() - 0.5) * 30
   const randomY = (Math.random() - 0.5) * 30
   const randomZ = (Math.random() - 0.5) * 30
   const scale = Math.random()
-  esfera.push(<Sphere position={[randomX, randomY, randomZ]} scale={scale}><meshBasicMaterial color='hotpink' /></Sphere>)
+  cones.push(
+    <Cone position={[randomX, randomY, randomZ]} scale={[scale, (scale * 3), scale]} rotation={[3,0,0]}>
+      <meshMatcapMaterial matcap={colorMap[3]}/>
+    </Cone>)
 }
 
 const toru =[]
@@ -25,24 +37,36 @@ for (let i = 0; i < 100; i++){
   const randomX = (Math.random() - 0.5) * 30
   const randomY = (Math.random() - 0.5) * 30
   const randomZ = (Math.random() - 0.5) * 30
+  const rotationX = Math.random() * Math.PI
+  const rotationY = Math.random() * Math.PI
+  const rotationZ = Math.random() * Math.PI
   const scale = Math.random()
-  toru.push(<Torus position={[randomX, randomY, randomZ]} scale={scale}><meshBasicMaterial color='hotpink' /></Torus>)
+  toru.push(
+    <Torus position={[randomX, randomY, randomZ]} rotation= {[rotationX, rotationY, rotationZ]} scale={scale} >
+      <meshMatcapMaterial matcap={colorMap[3]}/>
+    </Torus>)
 }
 
 const tetrahedron =[]
-for (let i = 0; i < 100; i++){
+for (let i = 0; i < 200; i++){
   const randomX = (Math.random() - 0.5) * 30
   const randomY = (Math.random() - 0.5) * 30
   const randomZ = (Math.random() - 0.5) * 30
+  const rotationX = Math.random() * Math.PI
+  const rotationY = Math.random() * Math.PI
+  const rotationZ = Math.random() * Math.PI
   const scale = Math.random()
-  tetrahedron.push(<Tetrahedron position={[randomX, randomY, randomZ]} scale={scale}><meshBasicMaterial color='hotpink' /></Tetrahedron>)
+  tetrahedron.push(
+    <Tetrahedron position={[randomX, randomY, randomZ]} scale={scale} rotation= {[rotationX, rotationY, rotationZ]}>
+      <meshBasicMaterial wireframe={true} />
+    </Tetrahedron>)
 }
 
 
   return (
-    <mesh>
+    <mesh key={state}>
     {state == 0 ? 
-      esfera
+      cones
       : (state == 1 ? toru
         : tetrahedron)
     }
