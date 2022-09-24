@@ -1,6 +1,6 @@
 #root {
   width: 1280px;
-  height: 80vh;
+  height: 100vh;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -10,14 +10,17 @@
   display: grid;
   grid-template-rows: auto 1fr;
   place-items: center;
+  position: relative;
 }
 
 .options-container{
+  max-width: 700px;
   background-color: rgb(233, 233, 233);
-  /* width: 800px; */
-  border-radius: 10px;
   display: flex;
+  border-radius: 10px;
+  position: absolute;
   padding: 6px 10px;
+  bottom: 0px;
 }
 .options-container button{
   margin: 4px 10px;
@@ -25,8 +28,20 @@
 .inputs-container{
   display: grid;
   margin-left: 10px;
+  margin-top: 10px;
+}
+.inputs-container input{
+  width: 200px;
 }
 .inputs-container button{
+  margin-top: 16px;
+  padding: 4px 10px;
+}
+
+.material-options-container{
+  display: flex;
+}
+.material-options-container button{
   padding: 4px 10px;
 }
 
@@ -42,6 +57,15 @@
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
+  }
+}
+@media (max-width: 600px){
+  .options-container{
+    display: grid;
+    bottom: 40px;
+  }
+  .options-container input{
+    margin-left: 22px;
   }
 }
 

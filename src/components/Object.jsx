@@ -28,7 +28,7 @@ for (let i = 0; i < 100; i++){
   const scale = Math.random()
   cones.push(
     <Cone position={[randomX, randomY, randomZ]} scale={[scale, (scale * 3), scale]} rotation={[3,0,0]}>
-      <meshMatcapMaterial matcap={colorMap[3]}/>
+      <meshMatcapMaterial matcap={colorMap[mat]}/>
     </Cone>)
 }
 
@@ -43,7 +43,7 @@ for (let i = 0; i < 100; i++){
   const scale = Math.random()
   toru.push(
     <Torus position={[randomX, randomY, randomZ]} rotation= {[rotationX, rotationY, rotationZ]} scale={scale} >
-      <meshMatcapMaterial matcap={colorMap[3]}/>
+      <meshMatcapMaterial matcap={colorMap[mat]}/>
     </Torus>)
 }
 
@@ -58,7 +58,7 @@ for (let i = 0; i < 200; i++){
   const scale = Math.random()
   tetrahedron.push(
     <Tetrahedron position={[randomX, randomY, randomZ]} scale={scale} rotation= {[rotationX, rotationY, rotationZ]}>
-      <meshBasicMaterial wireframe={true} />
+      <meshMatcapMaterial matcap={colorMap[mat]} wireframe={true} />
     </Tetrahedron>)
 }
 
