@@ -29,8 +29,9 @@
   padding: 6px 10px;
 }
 .down-button{
+  display: none;
   position: absolute;
-  right: 4px;
+  right: 0px;
   top: 4px;
   background-color: gray;
   padding: 4px 10px;
@@ -40,12 +41,13 @@
 }
 .inputs-container{
   display: grid;
-  /* margin-left: 10px; */
+  margin-left: 10px;
   margin-top: 10px;
 }
 .inputs-container input{
   width: 200px;
   padding: 4px 2px;
+  border-radius: 6px;
 }
 .inputs-container button{
   margin-top: 16px;
@@ -83,10 +85,11 @@
   .options-container input{
     margin-left: 22px;
   }
-  /* .inputs-container{
+  .down-button{
     display: flex;
-    margin-left: 10px;
-    margin-top: 10px;
-  } */
+  }
+  .inputs-container{
+    margin-left: -10px;
+  }
 }
 
