@@ -40,7 +40,7 @@ function App() {
           <ambientLight />
           <pointLight position={[8,8,8]}/>
           <mesh>
-            <Object state={state} mat={mat}/>
+            <Object state={state} mat={mat} color={color}/>
           </mesh>
           
           <Center top center>

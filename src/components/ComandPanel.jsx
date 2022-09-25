@@ -1,5 +1,4 @@
-import React, {useContext} from 'react'
-import {AppContext} from '../context/AppContex';
+import React from 'react'
 
 export const ComandPanel = ({setState, setMat, setTextMat, setText, setPanel}) => {
 
