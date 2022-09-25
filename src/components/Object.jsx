@@ -1,7 +1,9 @@
-import React, {useEffect} from 'react'
+import React, {useContext} from 'react'
 import {useLoader} from '@react-three/fiber'
 import {Cone, Tetrahedron, Torus, TorusKnot} from '@react-three/drei'
 import * as THREE from 'three'
+
+import {AppContext} from '../context/AppContex';
 
 
 export const Object = ({state, mat}) => {

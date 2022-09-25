@@ -2,36 +2,50 @@
   width: 1280px;
   height: 100vh;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 .App{
   width: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr;
   place-items: center;
   position: relative;
 }
+.comandPanel-position{
+  display: grid;
+  place-items: center;
+}
+.span-comandPanel-container{
+  display: grid;
+  place-items: center;
+  position: absolute;
+  bottom: 20px;
+}
 
 .options-container{
+  position: relative;
   max-width: 700px;
   background-color: rgb(233, 233, 233);
   display: flex;
   border-radius: 10px;
-  position: absolute;
   padding: 6px 10px;
-  bottom: 0px;
+}
+.down-button{
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  background-color: gray;
+  padding: 4px 10px;
 }
 .options-container button{
   margin: 4px 10px;
 }
 .inputs-container{
   display: grid;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   margin-top: 10px;
 }
 .inputs-container input{
   width: 200px;
+  padding: 4px 2px;
 }
 .inputs-container button{
   margin-top: 16px;
@@ -62,10 +76,17 @@
 @media (max-width: 600px){
   .options-container{
     display: grid;
-    bottom: 40px;
+    bottom: 40px;  
+    /* left: 30px;
+    right: 30px; */
   }
   .options-container input{
     margin-left: 22px;
   }
+  /* .inputs-container{
+    display: flex;
+    margin-left: 10px;
+    margin-top: 10px;
+  } */
 }
 
