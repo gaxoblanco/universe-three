@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import {useLoader} from '@react-three/fiber'
-import {Cone, Tetrahedron, Torus, TorusKnot} from '@react-three/drei'
+import {Cone, Tetrahedron, Octahedron, } from '@react-three/drei'
 import * as THREE from 'three'
 
 import {AppContext} from '../context/AppContex';
@@ -44,9 +44,9 @@ for (let i = 0; i < 100; i++){
   const rotationZ = Math.random() * Math.PI
   const scale = Math.random()
   toru.push(
-    <Torus position={[randomX, randomY, randomZ]} rotation= {[rotationX, rotationY, rotationZ]} scale={scale} >
+    <Octahedron position={[randomX, randomY, randomZ]} rotation= {[rotationX, rotationY, rotationZ]} scale={scale} >
       <meshMatcapMaterial matcap={colorMap[mat]}/>
-    </Torus>)
+    </Octahedron>)
 }
 
 const tetrahedron =[]

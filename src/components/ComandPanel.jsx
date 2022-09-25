@@ -42,7 +42,7 @@ const handleObj = (n)=>{
           </div>
         </div>
         <button type='button' onClick={()=> handleObj(0)}>Conos</button>
-        <button type='button' onClick={()=> handleObj(1)}>Torus</button>
+        <button type='button' onClick={()=> handleObj(1)}>Octahedron</button>
         <button type='button' onClick={()=> handleObj(2)}>Tetrahedron</button>
 
         <div className='material-options--container'>

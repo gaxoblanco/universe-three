@@ -8,21 +8,48 @@
   width: 100%;
   place-items: center;
   position: relative;
+  overflow-y: hidden;
+	 overflow-x: scroll;
 }
 .comandPanel-position{
   display: grid;
   place-items: center;
+  transition: transform 1.6s linear;
+  transform: translateY(0);
 }
+.comandPanel-position--down {
+  display: grid;
+  place-items: center;
+  transition: transform 2s ease-in-out;
+  transform: translateY(400px);
+}
+
 .span-comandPanel-container{
   display: grid;
   place-items: center;
   position: absolute;
-  bottom: 20px;
+  bottom: 0px;
+}
+.openPanel-container{
+  display: grid;
+  place-items: center;
+  transition: transform 3s ease-in-out;
+  transform: translateY(0);
+}
+.openPanel-button{
+  position: absolute;
+  margin-bottom: 70px;
+}
+.openPanel-container--down{
+  display: grid;
+  place-items: center;
+  transition: transform 0.6s ease-in-out;
+  transform: translateY(60px);
 }
 
 .options-container{
   position: relative;
-  max-width: 700px;
+  max-width: 720px;
   background-color: rgb(233, 233, 233);
   display: flex;
   border-radius: 10px;
@@ -61,20 +88,7 @@
   padding: 4px 10px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
 @media (max-width: 600px){
   .options-container{
     display: grid;
